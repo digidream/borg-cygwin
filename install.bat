@@ -4,6 +4,7 @@ set BUILDPKGS=python3,python3-setuptools,binutils,gcc-g++,libopenssl,openssl-dev
 
 setup-x86_64.exe -q -B -R %CYGPATH% -L -D -s %CYGMIRROR% -P '%BUILDPKGS%'
 copy borg.bat %CYGPATH%
+copy nsswitch.conf %CYGPATH%\etc\
 
 cd %CYGPATH%
 bin\bash --login -c 'easy_install-3.4 pip'
