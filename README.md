@@ -8,8 +8,8 @@ Automated installation of borgbackup under Windows/CygWin
 Example use:
 
 ```
-D:\CygWin\> borg init /cygdrive/D/Borg
-D:\CygWin\> borg create -C lz4 /cygdrive/D/Borg::Test /cygdrive/C/Photos/
+D:\CygWin> borg init /cygdrive/D/Borg
+D:\CygWin> borg create -C lz4 /cygdrive/D/Borg::Test /cygdrive/C/Photos/
 ```
 
 Note that the CygWin folder is currently too large (>700MB). Working on pruning code.
