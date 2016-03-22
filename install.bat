@@ -1,7 +1,7 @@
 REM --- Change to use different CygWin platform and final install path
 
 set CYGSETUP=setup-x86_64.exe
-set CYGPATH=D:\Borg
+set CYGPATH=D:\CygWin
 
 REM --- Install build version of CygWin in a subfolder
 
