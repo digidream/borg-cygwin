@@ -2,7 +2,7 @@
 Automated installation of borgbackup under Windows/CygWin
 
 * Download `setup-x86_64.exe` from [CygWin Home Page](https://cygwin.com/setup-x86_64.exe)
-* Place both `borg.bat` and `install.bat` into the same folder
+* Place it to the same folder as the files from this repository
 * Run `install.bat`, you should end up with CygWin installation in `D:\CygWin\` (edit `install.bat` for different path)
 
 Example use:
