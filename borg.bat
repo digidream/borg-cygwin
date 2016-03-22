@@ -1,0 +1,1 @@
+@bin\bash --login -c "/bin/borg %*"
