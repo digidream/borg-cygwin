@@ -6,7 +6,7 @@ Automated installation of [borg backup](https://github.com/borgbackup/borg) unde
 * Run `install.bat`, after a while you should end up with CygWin installation in `Borg` subfolder
 * To install, copy the `Borg` subfolder into `C:\Program Files\` (this will require Administrator rights)
 * Optionally, add `C:\Program Files\Borg` into your Windows `PATH` variable
-* Delete completely the working folder
+* Delete completely the build folder
 
 To install into other folder or prepare 32-bit build, edit `install.bat` and use different CygWin setup executable.
 
