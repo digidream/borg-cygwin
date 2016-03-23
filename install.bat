@@ -29,7 +29,7 @@ set REMOVEPKGS=csih,gawk,lynx,man-db,groff,vim-minimal,tzcode,ncurses,info,util-
 
 REM --- Adjust final CygWin environment
 
-copy borg.bat %CYGPATH%
+echo @"C:\Program Files\Borg\bin\bash" --login -c "cd %%cd%%; /bin/borg %%*" >%CYGPATH%\borg.bat
 copy nsswitch.conf %CYGPATH%\etc\
 
 REM --- Copy built packages into release path
