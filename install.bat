@@ -21,7 +21,7 @@ cd %OURPATH%
 
 REM --- Install release version of CygWin in destination path
 
-set CYGPATH=%OUTPATH%\Borg
+set CYGPATH=%OURPATH%\Borg
 set INSTALLPKGS=python3,openssh,liblz4_1
 set REMOVEPKGS=csih,gawk,lynx,man-db,groff,vim-minimal,tzcode,ncurses,info,util-linux
 
