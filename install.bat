@@ -1,7 +1,7 @@
 REM --- Change to use different CygWin platform and final install path
 
 set CYGSETUP=setup-x86_64.exe
-set CYGPATH=D:\CygWin
+set TARGETPATH=C:\Program Files\Borg
 
 REM --- Install build version of CygWin in a subfolder
 
@@ -21,6 +21,7 @@ cd %OURPATH%
 
 REM --- Install release version of CygWin in destination path
 
+set CYGPATH=%OUTPATH%\Borg
 set INSTALLPKGS=python3,openssh,liblz4_1
 set REMOVEPKGS=csih,gawk,lynx,man-db,groff,vim-minimal,tzcode,ncurses,info,util-linux
 
