@@ -19,7 +19,7 @@ bin\bash --login -c 'easy_install-3.4 pip'
 bin\bash --login -c 'pip install borgbackup'
 cd %OURPATH%
 
-REM --- Install release version of CygWin in destination path
+REM --- Install release version of CygWin in a subfolder
 
 set CYGPATH=%OURPATH%\Borg
 set INSTALLPKGS=python3,openssh,liblz4_1
