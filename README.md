@@ -1,22 +1,23 @@
 # borg-cygwin
-Automated installation of [borg backup](https://github.com/borgbackup/borg) under Windows/CygWin
 
-* Create a temporary build folder and place the files from this repository there
-* Download `setup-x86_64.exe` from [CygWin Home Page](https://cygwin.com/setup-x86_64.exe) into build folder
-* Run `install.bat`, after a while you should end up with CygWin installation in `Borg` subfolder
-* To install, copy the `Borg` subfolder into `C:\Program Files\` (this will require Administrator rights)
-* Optionally, add `C:\Program Files\Borg` into your Windows `PATH` variable
-* Delete completely the build folder
+This creates a standard Windows installer for Borg Backup on 64bit Windows 7 and above.
 
-To install into other folder or prepare 32-bit build, edit `install.bat` and use different CygWin setup executable.
+* The only prerequisite is NSIS installed, available at http://nsis.sourceforge.net/Download
+* About 1 GB free disk space required to build installer
+* Borg install itself will only require about 150 MB
+* Tested on Windows 7 64-bit
 
-After installation, use borg like this:
+---
+
+Create the installer by running install.bat. After creating the installer, run it to install Borg.
+
+Then use borg like this, noting that all file paths are in Cygwin notation e.g. /cygdrive/c/path/to/my/files
 
 ```
 borg init /cygdrive/D/Borg
 borg create -C lz4 /cygdrive/D/Borg::Test /cygdrive/C/Photos/
 ```
 
-The install script first builds borg inside temporary CygWin subfolder, then installs much smaller release version into Borg subfolder. Built packages are copied over, unnecessary files removed.
+The install script first builds borg inside temporary CygWin subfolder, then installs a much smaller release version into the Borg-installer subfolder. Built packages are copied over, unnecessary files removed, and then NSIS is run.
 
 Tested with CygWin 2.4.1, borgbackup 1.0.0 on Windows 7 64-bit.

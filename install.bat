@@ -1,7 +1,16 @@
 REM --- Change to use different CygWin platform and final install path
 
 set CYGSETUP=setup-x86_64.exe
-set TARGETPATH=C:\Program Files\Borg
+set TARGETPATH=.
+
+REM --- NSIS must be installed!  Get NSIS from http://nsis.sourceforge.net/Download
+
+set MAKENSIS=C:\Program Files (x86)\NSIS\makensis.exe
+set POWERSHELL=%windir%\System32\WindowsPowerShell\v1.0\powershell.exe
+
+REM --- Fetch Cygwin setup from internet using powershell
+
+"%POWERSHELL%" -Command "(New-Object Net.WebClient).DownloadFile('https://cygwin.com/setup-x86_64.exe', 'setup-x86_64.exe')"
 
 REM --- Install build version of CygWin in a subfolder
 
@@ -21,7 +30,7 @@ cd %OURPATH%
 
 REM --- Install release version of CygWin in a subfolder
 
-set CYGPATH=%OURPATH%\Borg
+set CYGPATH=%OURPATH%\Borg-installer
 set INSTALLPKGS=python3,openssh,liblz4_1
 set REMOVEPKGS=csih,gawk,lynx,man-db,groff,vim-minimal,tzcode,ncurses,info,util-linux
 
@@ -29,7 +38,7 @@ set REMOVEPKGS=csih,gawk,lynx,man-db,groff,vim-minimal,tzcode,ncurses,info,util-
 
 REM --- Adjust final CygWin environment
 
-echo @"%TARGETPATH%\bin\bash" --login -c "cd %%cd%%; /bin/borg %%*" >%CYGPATH%\borg.bat
+echo @"%TARGETPATH%\bin\bash" --login -c "cd $(cygpath '%cd%'); /bin/borg %%*" >%CYGPATH%\borg.bat
 copy nsswitch.conf %CYGPATH%\etc\
 
 REM --- Copy built packages into release path
@@ -51,3 +60,10 @@ REM --- Remove all documentation
 del /s /q %CYGPATH%\usr\share\doc\
 del /s /q %CYGPATH%\usr\share\info\
 del /s /q %CYGPATH%\usr\share\man\
+
+REM --- Build Installer using NSIS
+
+cd %OURPATH%
+
+"%MAKENSIS%" nsis-installer.nsi
+
