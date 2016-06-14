@@ -2,8 +2,8 @@
 ; Billy Charlton <sfbilly@gmail.com>
 ; --------------------------
 
-!define VERSION "1.0.0"
-!define VERSION_LONG "1.0.0.3"
+!define VERSION "1.0.3"
+!define VERSION_LONG "1.0.3.0"
 
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\BorgBackupUnofficial"
 
@@ -21,7 +21,7 @@
 Name "Borg Backup ${VERSION}"
 
 ; The file to write
-OutFile "Borg Backup Setup v${VERSION}.exe"
+OutFile "Borg Backup Installer v${VERSION}.exe"
 
 ; The default installation directory
 InstallDir "C:\Program Files\Borg"
@@ -74,7 +74,7 @@ Section "Borg Backup (required)"
   ; ------------------------------
   ; create borg.bat in install dir
   FileOpen $4 "$INSTDIR\borg.bat" w
-  FileWrite $4 `@"$INSTDIR\bin\bash" --login -c "cd $$(cygpath '%cd%'); /bin/borg %*"`
+  FileWrite $4 `@"$INSTDIR\bin\bash" --login -c "cd \"$$(cygpath '%cd%')\"; /bin/borg %*"`
   FileClose $4
 
   ; ------------------------
