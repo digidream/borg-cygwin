@@ -2,8 +2,8 @@
 ; Billy Charlton <sfbilly@gmail.com>
 ; --------------------------
 
-!define VERSION "1.0.3"
-!define VERSION_LONG "1.0.3.0"
+!define VERSION "1.0.7"
+!define VERSION_LONG "1.0.7.0"
 
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\BorgBackupUnofficial"
 
