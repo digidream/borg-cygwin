@@ -40,6 +40,7 @@ REM --- Adjust final CygWin environment
 
 echo @"%TARGETPATH%\bin\bash" --login -c "cd $(cygpath '%cd%'); /bin/borg %%*" >%CYGPATH%\borg.bat
 copy nsswitch.conf %CYGPATH%\etc\
+copy fstab %CYGPATH%\etc\
 
 REM --- Copy built packages into release path
 
